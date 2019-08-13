@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.masthead {
+  background: $theme-color;
+  color: #FFF;
+  padding: 8em 0;
+
+  h1 {
+    font-size: 3em;
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.5em;
+    margin: 0;
+  }
+}

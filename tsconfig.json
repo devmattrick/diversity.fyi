@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "es2019"],
+    "jsx": "react",
+    "jsxFactory": "h"
+  }
+}
