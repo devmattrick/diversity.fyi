@@ -3,10 +3,7 @@
   grid-gap: 1em;
   grid-template-columns: 1fr 1fr 1fr;
   overflow-x: auto;
-  
-  // Hack to display box shadows despite overflow
   padding: 1em;
-  margin: -1em;
 
   width: 100%;
 }

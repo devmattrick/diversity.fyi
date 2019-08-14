@@ -35,16 +35,17 @@ class CompanyCompare extends Component<{}, CompanyCompareState> {
         {companies &&
           companies.map((company, index) => {
             return (
-              <CompanyCard
-                key={index}
-                name={company.name}
-                website={company.website}
-                report={company.stats.report}
-                logo={`https://data.diversity.fyi/${company.logo}`}
-                notes={company.notes}
-                sex={company.stats.data.sex}
-                race={company.stats.data.race}
-              />
+              <div key={index}>
+                <CompanyCard
+                  name={company.name}
+                  website={company.website}
+                  report={company.stats.report}
+                  logo={`https://data.diversity.fyi/${company.logo}`}
+                  notes={company.notes}
+                  sex={company.stats.data.sex}
+                  race={company.stats.data.race}
+                />
+              </div>
             );
           })}
       </div>

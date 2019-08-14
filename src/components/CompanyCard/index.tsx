@@ -81,9 +81,14 @@ class CompanyCard extends Component<CompanyCardProps> {
           {notes && (
             <div class={styles.companyCardNotes}>
               <h3>Notes</h3>
-              {notes.map((note, index) => (
-                <p key={index} dangerouslySetInnerHTML={{ __html: snarkdown(note) }}></p>
-              ))}
+              {notes.map((note, index) => {
+                // See: https://github.com/developit/snarkdown/issues/5#issuecomment-282924371
+                const mdNote = snarkdown(note).replace(
+                  /(<a href="(https?:)?\/\/.*?")>/g,
+                  '$1 target="_blank" rel="noopener noreferrer">',
+                );
+                return <p key={index} dangerouslySetInnerHTML={{ __html: mdNote }}></p>;
+              })}
             </div>
           )}
         </div>
