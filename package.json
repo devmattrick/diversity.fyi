@@ -8,12 +8,14 @@
   "private": true,
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src/"
   },
   "dependencies": {
     "classnames": "^2.2.6",
     "preact": "^10.0.0-rc.1",
-    "preact-router": "^3.0.1"
+    "preact-router": "^3.0.1",
+    "snarkdown": "^1.2.2"
   },
   "devDependencies": {
     "@types/webpack-env": "^1.14.0",

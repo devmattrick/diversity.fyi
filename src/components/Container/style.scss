@@ -1,9 +1,10 @@
 .container {
   max-width: 1750px;
+  width: 100%;
   padding: 25px;
   margin: 0 auto;
 }
 
-.container__fluid {
+.container--fluid {
   max-width: unset;
 }

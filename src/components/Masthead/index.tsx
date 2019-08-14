@@ -3,17 +3,17 @@ import { Component, ComponentChild, h } from 'preact';
 import { Container } from '../Container';
 import { EmojiPeopleGroup } from '../EmojiPeopleGroup';
 
-import { masthead } from './style.scss';
+import * as styles from './style.scss';
 
 class Masthead extends Component {
   public render(): ComponentChild {
     return (
-      <section class={masthead}>
+      <section class={styles.masthead}>
         <Container>
           <h1>
             diversity.fyi <EmojiPeopleGroup />
           </h1>
-          <p>Compare diversity statistics across companies.</p>
+          <p>Find and compare diversity statistics across companies.</p>
         </Container>
       </section>
     );

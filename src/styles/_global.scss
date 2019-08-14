@@ -9,4 +9,22 @@
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
+  color: #2f3542;
+}
+
+a {
+  color: $theme-color;
+  text-decoration: none;
+  border-bottom: 1px dotted $theme-color;
+}
+
+:global {
+  .icon-link {
+    border: none;
+  }
+  
+  .icon {
+    width: 1em;
+    height: 1em;
+  }
 }
