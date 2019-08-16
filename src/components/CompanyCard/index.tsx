@@ -72,7 +72,7 @@ class CompanyCard extends Component<CompanyCardProps> {
                 { percent: race.asian, label: 'Asian', color: '#2ed573' },
                 { percent: race.black, label: 'Black', color: '#ff6348' },
                 { percent: race.latinx, label: 'Latinx', color: '#5352ed' },
-                { percent: race.multiracial, label: 'Multiracial', color: '#00b894' },
+                { percent: race.multiracial, label: 'Multiracial', color: '#81ecec' },
                 { percent: race.nativeAmerican, label: 'Native American', color: '#e84393' },
                 { percent: race.white, label: 'White', color: '#ffa502' },
               ]}

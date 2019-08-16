@@ -40,7 +40,7 @@ class CompanyCompare extends Component<{}, CompanyCompareState> {
                   name={company.name}
                   website={company.website}
                   report={company.stats.report}
-                  logo={`https://data.diversity.fyi/${company.logo}`}
+                  logo={`https://data.diversity.fyi/${company.info}/logo.json`}
                   notes={company.notes}
                   sex={company.stats.data.sex}
                   race={company.stats.data.race}
