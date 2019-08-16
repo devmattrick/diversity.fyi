@@ -14,7 +14,6 @@ class CompanyCompare extends Component<{}, CompanyCompareState> {
       .then(response => response.json())
       .then(response => {
         response.forEach(company => {
-          console.log(company);
           Object.keys(company.stats.data.sex).forEach(
             key => (company.stats.data.sex[key] = parseFloat((company.stats.data.sex[key] / 100).toFixed(3))),
           );
