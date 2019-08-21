@@ -15,10 +15,10 @@ class CompanyCompare extends Component<{}, CompanyCompareState> {
       .then(response => {
         response.forEach(company => {
           Object.keys(company.stats.data.sex).forEach(
-            key => (company.stats.data.sex[key] = parseFloat((company.stats.data.sex[key] / 100).toFixed(3))),
+            key => (company.stats.data.sex[key] = parseFloat(company.stats.data.sex[key])),
           );
           Object.keys(company.stats.data.race).forEach(
-            key => (company.stats.data.race[key] = parseFloat((company.stats.data.race[key] / 100).toFixed(3))),
+            key => (company.stats.data.race[key] = parseFloat(company.stats.data.race[key])),
           );
         });
 

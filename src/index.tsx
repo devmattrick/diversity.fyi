@@ -1,7 +1,7 @@
 import { h, render } from 'preact';
 
 function init(): void {
-  let App = require('./App').default;
+  const App = require('./App').default;
   render(<App />, document.body);
 }
 

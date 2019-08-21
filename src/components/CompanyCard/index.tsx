@@ -62,19 +62,19 @@ class CompanyCard extends Component<CompanyCardProps> {
             <h3>Sex</h3>
             <PieChart
               data={[
-                { percent: sex.female, label: 'Female', color: '#ff4757' },
-                { percent: sex.male, label: 'Male', color: '#3742fa' },
+                { value: sex.female, label: 'Female', color: '#ff4757' },
+                { value: sex.male, label: 'Male', color: '#3742fa' },
               ]}
             />
             <h3>Race</h3>
             <PieChart
               data={[
-                { percent: race.asian, label: 'Asian', color: '#2ed573' },
-                { percent: race.black, label: 'Black', color: '#ff6348' },
-                { percent: race.latinx, label: 'Latinx', color: '#5352ed' },
-                { percent: race.multiracial, label: 'Multiracial', color: '#81ecec' },
-                { percent: race.nativeAmerican, label: 'Native American', color: '#e84393' },
-                { percent: race.white, label: 'White', color: '#ffa502' },
+                { value: race.asian, label: 'Asian', color: '#2ed573' },
+                { value: race.black, label: 'Black', color: '#ff6348' },
+                { value: race.latinx, label: 'Latinx', color: '#5352ed' },
+                { value: race.multiracial, label: 'Multiracial', color: '#81ecec' },
+                { value: race.nativeAmerican, label: 'Native American', color: '#e84393' },
+                { value: race.white, label: 'White', color: '#ffa502' },
               ]}
             />
           </div>
