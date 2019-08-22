@@ -6,6 +6,10 @@ module.exports = merge(require('./webpack.base.config'), {
   devServer: {
     hot: true,
   },
+  watchOptions: {
+    poll: true,
+    ignored: /node_modules/
+  },
   module: {
     rules: [
       {
