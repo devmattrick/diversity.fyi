@@ -1,3 +1,4 @@
 build/**
 webpack.config.js
 dist/
+*.scss.d.ts

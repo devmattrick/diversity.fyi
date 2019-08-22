@@ -1,3 +1,4 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { resolve } = require('path');
@@ -25,5 +26,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.template.html',
     }),
+    new CopyWebpackPlugin([
+      { from: './static/' },
+    ]),
   ],
 };
