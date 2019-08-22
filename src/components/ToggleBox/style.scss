@@ -1,0 +1,28 @@
+@import "../../styles/variables";
+
+.toggle-box {
+  background: $theme-color;
+  display: flex;
+  border-radius: 2em;
+  overflow: hidden;
+}
+
+.toggle-box__option {
+  transition: background 0.3s ease-in-out;
+  background: transparent;
+  color: #FFF;
+  padding: 1em 0.75em;
+  border-radius: 2em;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  flex: 1;
+
+  &.toggle-box__option--selected {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  input {
+    display: none;
+  }
+}

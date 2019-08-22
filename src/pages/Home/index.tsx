@@ -1,9 +1,9 @@
 import { Component, ComponentChild, h } from 'preact';
 
+import CompanyCompare from '../../components/CompanyCompare';
 import Container from '../../components/Container';
 
 import * as styles from './style.scss';
-import CompanyCompare from '../../components/CompanyCompare';
 
 class Home extends Component {
   public render(): ComponentChild {
