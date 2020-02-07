@@ -1,7 +1,15 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "es2019"],
     "jsx": "react",
-    "jsxFactory": "h"
-  }
+    "jsxFactory": "h",
+    "lib": [
+      "ES2020",
+      "DOM"
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "ES5",
+    "outDir": "dist/"
+  },
+  "include": ["src/"]
 }

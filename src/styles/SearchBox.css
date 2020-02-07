@@ -1,0 +1,17 @@
+.search-box:focus-within .search-box__label, .search-box--filled .search-box__label {
+  visibility: hidden;
+}
+
+/* hide the "X" button on the search field */
+.search-box__input::-ms-clear,
+.search-box__input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.search-box__input::-webkit-search-decoration,
+.search-box__input::-webkit-search-cancel-button,
+.search-box__input::-webkit-search-results-button,
+.search-box__input::-webkit-search-results-decoration {
+  display: none;
+}

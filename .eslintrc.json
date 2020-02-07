@@ -2,25 +2,29 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2019,
+    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    },
-    "sourceType": "module"
+    }
   },
-  "extends": [
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+  "plugins": [
+    "@typescript-eslint"
   ],
-  "rules": {
-    "@typescript-eslint/explicit-function-return-type": ["warn", { "allowExpressions": true }],
-    "react/no-unknown-property": ["error", { "ignore": ["class"] }]
-  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended"
+  ],
   "settings": {
     "react": {
-      "version": "latest",
-      "pragma": "h"
+      "createClass": "createClass",
+      "pragma": "h",
+      "version": "latest"
     }
+  },
+  "rules": {
+    "react/no-unknown-property": [1, { "ignore": ["class"] }]
   }
 }
