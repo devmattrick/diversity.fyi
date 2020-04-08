@@ -1,13 +1,17 @@
+if (process.env.NODE_ENV === 'development') {
+  require('preact/debug');
+}
+
 import { h, render } from 'preact';
 
 import './style.css';
 
-import applyFavicon from './utils/favicon';
+import randomFavicon from './utils/favicon';
 
 function init(): void {
   const App = require('./App').default;
   render(<App />, document.body);
-  applyFavicon();
+  randomFavicon();
 }
 
 if (module.hot) {

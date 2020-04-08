@@ -4,9 +4,9 @@ module.exports = {
       center: true,
       padding: '2rem'
     },
-    extends: {
-      colors: {
-        page: 'var(--color-page)'
+    extend: {
+      gridTemplateColumns: {
+        'segment-graph': 'min-content 1fr'
       }
     }
   },

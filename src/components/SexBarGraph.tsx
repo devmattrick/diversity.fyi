@@ -12,14 +12,15 @@ class SexBarGraph extends Component<SexBarGraphProps> {
     const malePercent = Math.round((males / total) * 1000) / 10;
 
     return (
-      <div>
-        <div class="flex items-center font-semibold">
-          <div class="text-red-600">{femalePercent}%</div>
-          <div class="flex-1 px-4">
-            <div class="flex">
-              <div class="text-red-600 flex-1">Female</div>
-              <div class="text-blue-600 flex-1 text-right">Male</div>
+      <div class="font-semibold">
+        <div>
+          <div class="flex">
+            <div class="text-red-600 flex-1">Female ({femalePercent}%)</div>
+            <div class="text-blue-600 flex-1 text-right">
+              Male ({malePercent}%)
             </div>
+          </div>
+          <div class="flex-1">
             <svg
               class="h-4 w-full"
               viewBox="0 0 100 10"
@@ -41,7 +42,6 @@ class SexBarGraph extends Component<SexBarGraphProps> {
               />
             </svg>
           </div>
-          <div class="text-blue-600">{malePercent}%</div>
         </div>
       </div>
     );

@@ -7,10 +7,10 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 
 const mode = process.env.NODE_ENV || 'production';
-const isProd = mode === 'production';
+const prod = mode === 'production';
 
-const jsFilename = isProd ? '[name].[contenthash:5].js' : '[name].js';
-const cssFilename = isProd ? '[name].[contenthash:5].css' : '[name].css';
+const jsFilename = prod ? '[name].[contenthash:5].js' : '[name].js';
+const cssFilename = prod ? '[name].[contenthash:5].css' : '[name].css';
 
 module.exports = {
   mode,
@@ -23,9 +23,9 @@ module.exports = {
     chunkFilename: jsFilename,
     path: __dirname + '/dist',
   },
-  devtool: isProd ? 'none' : 'cheap-eval-source-map',
+  devtool: prod ? 'none' : 'cheap-eval-source-map',
   devServer: {
-    hot: !isProd,
+    hot: !prod,
     contentBase: './dist',
   },
   module: {
@@ -43,7 +43,7 @@ module.exports = {
           {
             loader: MiniCSSExtractPlugin.loader,
             options: {
-              hmr: isProd,
+              hmr: prod,
             },
           },
           "css-loader",
@@ -57,7 +57,7 @@ module.exports = {
       eslint: true,
     }),
     new HtmlWebpackPlugin({
-      template: 'index.template.html',
+      template: prod ? '!!prerender-loader?string!index.template.html' : 'index.template.html',
     }),
     new CopyWebpackPlugin([
       { from: 'static/' },
@@ -66,7 +66,7 @@ module.exports = {
       filename: cssFilename,
       chunkFilename: cssFilename,
     }),
-    isProd && new CleanWebpackPlugin(),
+    prod && new CleanWebpackPlugin(),
   ].filter(Boolean),
   optimization: {
     splitChunks: {

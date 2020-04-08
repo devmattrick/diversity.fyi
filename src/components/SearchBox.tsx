@@ -35,7 +35,7 @@ class SearchBox extends Component<{}, SearchBoxState> {
                 />
               </svg>
             </div>
-            <div class="search-box__label text-gray-700 flex-1">
+            <div class="search-box__label text-gray-700 flex-1 pointer-events-none select-none">
               Search for companies...
             </div>
           </div>
