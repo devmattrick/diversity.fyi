@@ -24,7 +24,6 @@ if (typeof OffscreenCanvas !== 'undefined') {
       .convertToBlob()
       .then(blob => URL.createObjectURL(blob))
       .then(dataUrl => {
-        console.log(dataUrl);
         faviconLink.setAttribute('href', dataUrl as string);
       });
   };

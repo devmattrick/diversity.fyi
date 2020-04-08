@@ -1,26 +1,27 @@
 import { Component, ComponentChild, h, Fragment } from 'preact';
 import bind from 'bind-decorator';
-import { tint } from 'polished';
+import { mix } from 'polished';
 
 import { lerp } from '../utils/math';
 
 interface SegmentedBarGraphProps {
   data: SegmentedBarGraphSeries[];
   segments: string[];
-  baseColor: string;
+  color1?: string;
+  color2?: string;
 }
 
 interface SegmentedBarGraphSeries {
   label: string;
   value: number[];
-  baseColor?: string;
 }
 
 class SegmentedBarGraph extends Component<SegmentedBarGraphProps> {
   public static defaultProps: SegmentedBarGraphProps = {
     data: [],
     segments: [],
-    baseColor: '#44337A'
+    color1: '#6b46c1',
+    color2: '#d9c9ff'
   };
 
   /**
@@ -36,16 +37,16 @@ class SegmentedBarGraph extends Component<SegmentedBarGraphProps> {
   }
 
   private get steps(): number {
-    return this.props.data[0].value.length;
+    return this.props.segments.length;
   }
 
-  public render({ baseColor, data }): ComponentChild {
+  public render({ data }): ComponentChild {
     return (
-      <div class="grid grid-cols-segment-graph items-center col-gap-4 font-semibold">
+      <div class="grid grid-cols-segment-graph items-center col-gap-4 row-gap-2 font-semibold">
         {data.map((series, i) => {
           return (
             <Fragment key={i}>
-              <div style={{ color: baseColor }}>{series.label}</div>
+              <div class="text-gray-700">{series.label}</div>
               <svg
                 class="h-4 w-full"
                 viewBox="0 0 100 10"
@@ -67,7 +68,7 @@ class SegmentedBarGraph extends Component<SegmentedBarGraphProps> {
                         width={percent + 0.15}
                         height="10"
                         class="fill-current"
-                        style={{ color: this.color(i2, series) }}
+                        style={{ color: this.color(i2) }}
                       />
                     );
                   });
@@ -81,11 +82,10 @@ class SegmentedBarGraph extends Component<SegmentedBarGraphProps> {
   }
 
   @bind
-  private color(step: number, series: SegmentedBarGraphSeries): string {
+  private color(step: number): string {
     const percent = step / this.steps;
-    const baseColor = series.baseColor || this.props.baseColor;
 
-    return tint(lerp(0, 1, percent), baseColor);
+    return mix(lerp(0, 1, percent), this.props.color2, this.props.color1);
   }
 }
 
